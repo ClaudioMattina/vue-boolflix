@@ -4,7 +4,7 @@
 
     <Header @search="ciao"/>
 
-    <Main />
+    <Main :searchString="string" />
 
   </div>
 </template>
@@ -23,13 +23,14 @@ export default {
 
   data:function(){
     return{
-      
+      string:"",
     }
   },
 
   methods:{
-    ciao(stringa){
-      console.warn(stringa)
+    ciao(input){
+      console.warn(input)
+      this.string = input
     }
   }
 }

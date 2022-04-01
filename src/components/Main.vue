@@ -3,7 +3,7 @@
 
       <MainContent
       />
-
+    <h1>{{ searchString }}</h1>
   </main>
 </template>
 
@@ -12,6 +12,8 @@ import axios from "axios"
 import MainContent from './MainContent.vue'
 export default {
     name:"MainIndex",
+
+    props:{ 'searchString' : String},
 
     components:{
         MainContent,
