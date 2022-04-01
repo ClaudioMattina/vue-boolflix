@@ -24,6 +24,11 @@
 export default {
     name: "HeaderIndex",
     
+    data: function(){
+        return{
+            inputText:"",
+        }
+    }
 
 }
 </script>
