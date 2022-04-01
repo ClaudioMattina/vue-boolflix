@@ -3,9 +3,10 @@
 
         <div>
             <h2>BoolFix</h2>
+            <h2></h2>
         </div>
         <div id="inputs">
-            <input type="text">
+            <input  type="text">
         
         <a href="">Search</a>
         </div>
@@ -14,10 +15,30 @@
 </template>
 
 <script>
+
+
+
 export default {
     name: "HeaderIndex",
+
+    data: function(){
+        return{
+            ricerca:"",
+        }
+    },
+
+    methods:{
+        apiFilms(){
+            axios.get("api").then((result) =>{
+                this.ricerca = result.data.boh
+            })
+        }
+    }
 }
 </script>
+
+
+
 
 <style lang="scss" scoped>
     header{
