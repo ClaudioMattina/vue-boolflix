@@ -4,12 +4,12 @@
         <div>
             <h2>BoolFix</h2>
             <h2>{{ricerca}}</h2>
-            <h1></h1>
+            <h1>{{titolo}}</h1>
         </div>
         <div id="inputs">
             <input v-model="ricerca" type="text">
         
-        <a @click="apiFilms()" href="">Search</a>
+        <a href="">Search</a>
         </div>
         
     </header>
@@ -25,20 +25,24 @@ export default {
     data: function(){
         return{
             ricerca:"",
-            films:[],
+            films: null,
 
-            titolo:[],
-            titoloOriginale:[],
-            voto:[],
-            lingua:[],
+            titolo: null,
+            titoloOriginale: null,
+            voto: null,
+            lingua: null,
         }
+    },
+
+     created: function(){
+        this.apiFilms()
     },
 
     methods:{
         apiFilms(){
-            axios.get("https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999").then((result) =>{
+            axios.get("https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999&query=ritorno+al+futuro").then((result) =>{
                 this.titolo = result.data.name
-                this.titoloOriginale = result.data.original_titl
+                this.titoloOriginale = result.data.original_title
                 this.voto = result.data.popularity
                 this.lingua = result.data.original_language
                 
