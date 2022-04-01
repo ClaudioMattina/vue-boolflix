@@ -13,7 +13,7 @@ import MainContent from './MainContent.vue'
 export default {
     name:"MainIndex",
 
-    props:{ 'searchString' : String},
+    props:["searchString"],
 
     components:{
         MainContent,
@@ -28,6 +28,7 @@ export default {
             titoloOriginale: null,
             voto: null,
             lingua: null,
+            
         }
     },
 
