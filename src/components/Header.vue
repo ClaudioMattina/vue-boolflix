@@ -3,10 +3,10 @@
 
         <div>
             <h2>BoolFix</h2>
-            <h2></h2>
+            <h2>{{ricerca}}</h2>
         </div>
         <div id="inputs">
-            <input  type="text">
+            <input v-model="ricerca" type="text">
         
         <a href="">Search</a>
         </div>
@@ -17,7 +17,7 @@
 <script>
 
 
-
+import axios from "axios"
 export default {
     name: "HeaderIndex",
 
@@ -29,7 +29,7 @@ export default {
 
     methods:{
         apiFilms(){
-            axios.get("api").then((result) =>{
+            axios.get("").then((result) =>{
                 this.ricerca = result.data.boh
             })
         }
