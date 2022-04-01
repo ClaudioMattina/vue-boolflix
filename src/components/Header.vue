@@ -3,13 +3,15 @@
 
         <div>
             <h2>BoolFlix</h2>
-            <h2>{{ricerca}}</h2>
+            <h2>{{inputText}}</h2>
             
         </div>
         <div id="inputs">
-            <input v-model="ricerca" type="text">
+            <input  @keyup.enter="$emit('search', inputText)" v-model="inputText" placeholder="cerca" type="text">
         
-            <a href="">Search</a>
+            <a @click="$emit('search', inputText)" href="#">
+                Search
+            </a>
         </div>
         
     </header>
@@ -24,7 +26,7 @@ export default {
 
     data: function(){
         return{
-            ricerca:"",
+            inputText:"",
             films: null,
 
             titolo: null,
@@ -40,7 +42,7 @@ export default {
 
     methods:{
         apiFilms(){
-            axios.get("https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999&query=ritorno+al+futuro").then((result) =>{
+            axios.get("https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999&query=").then((result) =>{
                 this.titolo = result.data.name
                 this.titoloOriginale = result.data.original_title
                 this.voto = result.data.popularity

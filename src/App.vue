@@ -2,7 +2,7 @@
   <div id="app">
 
 
-    <Header />
+    <Header @search="ciao"/>
 
     <Main />
 
@@ -19,6 +19,18 @@ export default {
   components: {
     Header,
     Main,
+  },
+
+  data:function(){
+    return{
+      
+    }
+  },
+
+  methods:{
+    ciao(stringa){
+      console.warn(stringa)
+    }
   }
 }
 </script>
