@@ -3,7 +3,7 @@
 
       <MainContent
       />
-    <h1>{{ searchString }}</h1>
+    <h1>{{ searchString}}</h1>
   </main>
 </template>
 
