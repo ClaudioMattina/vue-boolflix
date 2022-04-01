@@ -4,11 +4,12 @@
         <div>
             <h2>BoolFix</h2>
             <h2>{{ricerca}}</h2>
+            <h1></h1>
         </div>
         <div id="inputs">
             <input v-model="ricerca" type="text">
         
-        <a href="">Search</a>
+        <a @click="apiFilms()" href="">Search</a>
         </div>
         
     </header>
@@ -24,13 +25,23 @@ export default {
     data: function(){
         return{
             ricerca:"",
+            films:[],
+
+            titolo:[],
+            titoloOriginale:[],
+            voto:[],
+            lingua:[],
         }
     },
 
     methods:{
         apiFilms(){
-            axios.get("").then((result) =>{
-                this.ricerca = result.data.boh
+            axios.get("https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999").then((result) =>{
+                this.titolo = result.data.name
+                this.titoloOriginale = result.data.original_titl
+                this.voto = result.data.popularity
+                this.lingua = result.data.original_language
+                
             })
         }
     }
