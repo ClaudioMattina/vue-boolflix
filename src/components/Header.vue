@@ -2,16 +2,18 @@
     <header>
 
         <div>
-            <h2>BoolFix</h2>
+            <h2>BoolFlix</h2>
             <h2>{{ricerca}}</h2>
-            <h1>{{titolo}}</h1>
+            
         </div>
         <div id="inputs">
             <input v-model="ricerca" type="text">
         
-        <a href="">Search</a>
+            <a href="">Search</a>
         </div>
-        
+        <div v-for="(element, index) in titolo" :key="index">
+            <h1>{{titolo}}</h1>
+        </div>
     </header>
 </template>
 
