@@ -11,9 +11,7 @@
         
             <a href="">Search</a>
         </div>
-        <div v-for="(element, index) in titolo" :key="index">
-            <h1>{{titolo}}</h1>
-        </div>
+        
     </header>
 </template>
 
@@ -59,6 +57,7 @@ export default {
 
 <style lang="scss" scoped>
     header{
+        margin-top: 0;
         height: 10vh;
         background-color: black;
         color: white;

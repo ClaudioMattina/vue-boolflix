@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <main>
 
-      <MainContent/>
-      
-  </div>
+      <MainContent
+      />
+
+  </main>
 </template>
 
 <script>
@@ -16,6 +17,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+    main{
+        background-color: grey;
+        height: 90vh;
+    }
 </style>
