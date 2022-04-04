@@ -1,6 +1,6 @@
 <template>
   <div class="scheda">
-    <h1>Titolo</h1>
+    <h5> {{infoOggetti.original_title}} </h5>
     <p>titolo originale</p>
     <p>lingua</p>
     <p>voto</p>
@@ -8,13 +8,19 @@
 </template>
 
 <script>
+
 export default {
-    name:"MainContentIndex"
+    name:"MainContentIndex",
+    props: {"infoOggetti" : Array,},
+    
 }
+
 </script>
+
 
 <style lang="scss" scoped>
   .scheda{
+    text-align: center;
     background-color: white;
     height: 200px;
     width: 150px;

@@ -1,11 +1,13 @@
 <template>
   <main>
-      
-      <!-- v-for="(element,index) in oggettiTrovati" :key="index" -->
 
-      <MainContent 
+      
+
+      <MainContent v-for="(element, index) in oggettiTrovati" :key="index"
+      :infoOggetti = "oggettiTrovati"
       />
-    <h1></h1>
+
+    
   </main>
 </template>
 
@@ -44,7 +46,12 @@ export default {
 
     main{
         background-color: grey;
-        height: 90vh;
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 50px 10px;
     }
 
 </style>
