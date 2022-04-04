@@ -4,7 +4,7 @@
       
 
       <MainContent v-for="(element, index) in oggettiTrovati" :key="index"
-      :infoOggetti = "oggettiTrovati"
+      :infoOggetti = "element"
       />
 
     

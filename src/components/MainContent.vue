@@ -11,7 +11,7 @@
 
 export default {
     name:"MainContentIndex",
-    props: {"infoOggetti" : Array,},
+    props: {"infoOggetti" : Object,},
     
 }
 

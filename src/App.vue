@@ -30,6 +30,10 @@ export default {
     }
   },
 
+  created: function(){
+     
+  },
+
   methods:{
 
        ricercaAxios(textToSearch){
