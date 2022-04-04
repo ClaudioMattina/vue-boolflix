@@ -1,7 +1,9 @@
 <template>
   <main>
+      
+      <!-- v-for="(element,index) in oggettiTrovati" :key="index" -->
 
-      <MainContent
+      <MainContent 
       />
     <h1></h1>
   </main>
@@ -13,7 +15,7 @@ import MainContent from './MainContent.vue'
 export default {
     name:"MainIndex",
 
-    props:["searchString"],
+    props:["oggettiTrovati"],
 
     components:{
         MainContent,

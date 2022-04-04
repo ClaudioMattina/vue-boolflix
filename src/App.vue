@@ -4,7 +4,7 @@
 
     <Header @search="ricercaAxios"/>
 
-    <Main :searchString="oggetto" />
+    <Main :oggettiTrovati="oggetto" />
 
   </div>
 </template>
@@ -38,8 +38,8 @@ export default {
 
   methods:{
 
-       apiFilms(){
-            axios.get("https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999&query=").then((result) =>{
+       ricercaAxios(textToSearch){
+             this.oggetto = axios.get(`https://api.themoviedb.org/3/search/movie?api_key=5f9d6c871c535668747bc3410bc15999&query=${textToSearch}`).then((result) =>{
                 this.titolo = result.data.name
                 this.titoloOriginale = result.data.original_title
                 this.voto = result.data.popularity
@@ -49,10 +49,7 @@ export default {
         }
     },
 
-    ricercaAxios(textToSearch){
-      /* console.warn(inputText) */
-      this.oggetto = `https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999&query=${textToSearch}` 
-    }
+   
   }
 
 </script>
