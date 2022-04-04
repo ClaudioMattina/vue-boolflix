@@ -3,7 +3,7 @@
 
       <MainContent
       />
-    <h1>{{ searchString}}</h1>
+    <h1></h1>
   </main>
 </template>
 
@@ -28,7 +28,7 @@ export default {
     },
 
     created: function(){
-        this.apiFilms()
+       
     },
 
     methods:{

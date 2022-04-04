@@ -2,9 +2,9 @@
   <div id="app">
 
 
-    <Header @search="ciao"/>
+    <Header @search="ricercaAxios"/>
 
-    <Main :searchString="string" />
+    <Main :searchString="oggetto" />
 
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
 
   data:function(){
     return{
-      string: null,
+      oggetto: null,
 
 
       films: null,
@@ -49,9 +49,9 @@ export default {
         }
     },
 
-    ciao(input){
-      console.warn(input)
-      this.string = "https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999&query=" + input
+    ricercaAxios(textToSearch){
+      /* console.warn(inputText) */
+      this.oggetto = `https://api.themoviedb.org/3/movie/550?api_key=5f9d6c871c535668747bc3410bc15999&query=${textToSearch}` 
     }
   }
 
