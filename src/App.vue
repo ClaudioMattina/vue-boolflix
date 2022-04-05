@@ -24,8 +24,8 @@ export default {
 
   data:function(){
     return{
-      oggettoFilm: null,
-      oggettoSerie: null,
+      oggettoFilm: [],
+      oggettoSerie: [],
       oggettoFilmSerie: []
 
     }
@@ -51,13 +51,13 @@ export default {
                
               this.oggettoSerie = result.data.results;
               console.log(this.oggettoSerie);
-
-              
+ 
+              this.oggettoFilmSerie = [...this.oggettoFilm, ...this.oggettoSerie]
+              console.warn(this.oggettoFilmSerie)
                 
             })
 
-            this.oggettoFilmSerie = ["...oggettoFilm", "...oggettoSerie"]
-              console.warn(this.oggettoFilmSerie)
+            
             
         }
     },

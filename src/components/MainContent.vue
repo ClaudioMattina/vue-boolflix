@@ -1,7 +1,7 @@
 <template>
 
   <div class="scheda">
-    <img src="http://image.tmdb.org/t/p/w1000`${infoOggetti.backdrop_path}`" alt="">
+    
     <div>
         <h5> {{infoOggetti.original_title}} {{infoOggetti.name}} </h5>
         <p> {{infoOggetti.title}} </p>
@@ -16,7 +16,7 @@
 
 export default {
     name:"MainContentIndex",
-    props: {"infoOggetti" : Object,},
+    props: {"infoOggetti" : Object},
     
     
 }
