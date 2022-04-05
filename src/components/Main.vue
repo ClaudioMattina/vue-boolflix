@@ -5,6 +5,7 @@
 
       <MainContent v-for="(element, index) in oggettiTrovati" :key="index"
       :infoOggetti = "element"
+      :urlImg = "element.poster_path"
       />
 
     
@@ -17,7 +18,7 @@ import MainContent from './MainContent.vue'
 export default {
     name:"MainIndex",
 
-    props:["oggettiTrovati"],
+    props:["oggettiTrovati",],
 
     components:{
         MainContent,
@@ -25,8 +26,7 @@ export default {
 
     data: function(){
         return{
-            
-            
+               
             
         }
     },

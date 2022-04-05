@@ -4,7 +4,7 @@
 
     <Header @search="ricercaAxios"/>
 
-    <Main :oggettiTrovati="oggetto" />
+    <Main :oggettiTrovati="oggettoFilmSerie" />
 
   </div>
 </template>
@@ -24,8 +24,9 @@ export default {
 
   data:function(){
     return{
-      oggetto: null,
-
+      oggettoFilm: null,
+      oggettoSerie: null,
+      oggettoFilmSerie: []
 
     }
   },
@@ -37,15 +38,26 @@ export default {
   methods:{
 
        ricercaAxios(textToSearch){
-             this.oggetto = axios.get(`https://api.themoviedb.org/3/search/movie?api_key=5f9d6c871c535668747bc3410bc15999&query=${textToSearch}`).then((result) =>{
-               console.warn(textToSearch)
+             this.oggettoFilm = axios.get(`https://api.themoviedb.org/3/search/movie?api_key=5f9d6c871c535668747bc3410bc15999&query=${textToSearch}`).then((result) =>{
+              console.warn(textToSearch)
                
-              this.oggetto = result.data.results;
-              console.log(this.oggetto);
+              this.oggettoFilm = result.data.results;
+              console.log(this.oggettoFilm);
                 
-              
-    
             })
+
+              this.oggettoSerie = axios.get(`https://api.themoviedb.org/3/search/tv?api_key=5f9d6c871c535668747bc3410bc15999&query=${textToSearch}`).then((result) =>{
+              console.warn(textToSearch)
+               
+              this.oggettoSerie = result.data.results;
+              console.log(this.oggettoSerie);
+
+              
+                
+            })
+
+            this.oggettoFilmSerie = ["...oggettoFilm", "...oggettoSerie"]
+              console.warn(this.oggettoFilmSerie)
             
         }
     },

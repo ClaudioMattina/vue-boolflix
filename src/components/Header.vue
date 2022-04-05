@@ -2,8 +2,8 @@
     <header>
 
         <div>
+            
             <h2>BoolFlix</h2>
-            <h2>{{inputText}}</h2>
             
         </div>
         <div id="inputs">

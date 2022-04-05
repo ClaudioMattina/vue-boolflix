@@ -1,9 +1,14 @@
 <template>
+
   <div class="scheda">
-    <h5> {{infoOggetti.original_title}} </h5>
-    <p> {{infoOggetti.title}} </p>
-    <p> {{infoOggetti.original_language}} </p>
-    <p> {{infoOggetti.vote_average}} </p>
+    <img src="http://image.tmdb.org/t/p/w1000`${infoOggetti.backdrop_path}`" alt="">
+    <div>
+        <h5> {{infoOggetti.original_title}} {{infoOggetti.name}} </h5>
+        <p> {{infoOggetti.title}} </p>
+        <p> {{infoOggetti.original_language}} </p>
+        <p> {{infoOggetti.vote_average}} </p>
+    </div>
+    
   </div>
 </template>
 
@@ -12,6 +17,7 @@
 export default {
     name:"MainContentIndex",
     props: {"infoOggetti" : Object,},
+    
     
 }
 
