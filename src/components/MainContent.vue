@@ -2,7 +2,7 @@
 
   <div class="scheda">
     <div class="img-container">
-      <img src="http://image.tmdb.org/t/p/w500/${infoOggetti.poster_path}" alt="">
+      <img src=`http://image.tmdb.org/t/p/w500/${infoOggetti.poster_path}` alt="">
     </div>
     <div>
         <h5> {{infoOggetti.original_title}} {{infoOggetti.name}} </h5>
