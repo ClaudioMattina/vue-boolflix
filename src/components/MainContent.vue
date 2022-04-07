@@ -1,17 +1,15 @@
 <template>
-
-  <div class="scheda">
-    <div class="img-container">
-      <img :src="`${myImg}`" alt="">
-    </div>
-    <div>
-        <h5> {{infoOggetti.original_title}} {{infoOggetti.name}} </h5>
-        <p> {{infoOggetti.title}} </p>
-        <p> <lang-flag :iso="`${infoOggetti.original_language}`" /> </p>
-        <p> {{infoOggetti.vote_average}} </p>
-    </div>
+      
+      <div class="card" style="width: 18rem;">
+          <img :src="`http://image.tmdb.org/t/p/w500/${infoOggetti.poster_path}`" class="card-img-top" alt="">
+          <div class="card-body">
+                <h5 class="card-title"> {{infoOggetti.original_title}} {{infoOggetti.name}} </h5>
+                <p class="card-text"> <lang-flag :iso="`${infoOggetti.original_language}`" /> </p>
+                <p class="card-text"> {{infoOggetti.vote_average}} </p>
+          </div>
+      </div>
     
-  </div>
+  
 </template>
 
 <script>
@@ -22,7 +20,7 @@ export default {
     
     data: function(){
       return{
-        myImg : "http://image.tmdb.org/t/p/w500/" + "infoOggetti.poster_path"
+       
       }
     },
 
